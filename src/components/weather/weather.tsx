@@ -36,7 +36,7 @@ export const Weather = () => {
 
   return (
     <Fragment>
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Search
           city={city}
           setCity={setCity}

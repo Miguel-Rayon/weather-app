@@ -10,7 +10,7 @@ dayjs.extend(localizedFormat);
 export const CardWeather = ({ weather, ...props }: ICardWeather) => {
   return (
     <Stack {...props} spacing={1.5}>
-      <Typography variant="h3">{weather.location?.name}</Typography>
+      <Typography variant="h4">{weather.location?.name}</Typography>
       <Typography variant="body2">
         {decodeText(weather.location.region)} | {weather.location.country}
       </Typography>
