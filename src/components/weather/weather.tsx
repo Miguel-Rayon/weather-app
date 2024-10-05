@@ -16,6 +16,7 @@ export const Weather = () => {
   const [error, setError] = useState(ERROR_NONE);
 
   const handlerSearchCity = async () => {
+    setError(ERROR_NONE);
     setLoading(true);
     if (city === "") setError(ERROR_EMPTY_CITY);
     const weatherResponse = await getWeather({ city });
