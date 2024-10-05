@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -8,16 +8,16 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Container from "@/components/Container";
 import Topbar from "./components/Topbar";
 import Sidebar from "./components/Sidebar";
-import { useRouter } from "next/router";
 import Footer from "./components/Footer";
 
 const Main = ({
   children,
-  colorInvert = false,
   bgcolor = "transparent",
-}: any) => {
+}: {
+  children: React.JSX.Element;
+  bgcolor?: string;
+}) => {
   const theme = useTheme();
-  const router = useRouter();
   const isMd = useMediaQuery(theme.breakpoints.up("md"), {
     defaultMatches: true,
   });
@@ -38,18 +38,6 @@ const Main = ({
     disableHysteresis: true,
     threshold: 38,
   });
-
-  useEffect(() => {
-    const handleRouterChange = (url) => {
-      console.log(url);
-    };
-
-    router.events.on("routeChangeStart", handleRouterChange);
-
-    return () => {
-      router.events.off("routeChangeStart", handleRouterChange);
-    };
-  }, []);
 
   return (
     <Box style={{ paddingTop: 5 }}>

@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { useTheme } from "@mui/material/styles";
 import {
   Typography,
-  Avatar,
   Divider,
   List,
   ListItem,
@@ -15,15 +13,10 @@ import {
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import Logout from "@mui/icons-material/Logout";
 import ThemeModeToggler from "@/components/ThemModeToggler";
-import { useRouter } from "next/router";
 import { Navigation } from "@/layouts/navigation";
 import Grid from "@mui/material/Grid2";
 
 const SidebarNav = () => {
-  const theme = useTheme();
-  const router = useRouter();
-  const { mode } = theme.palette;
-
   return (
     <Box>
       <Box

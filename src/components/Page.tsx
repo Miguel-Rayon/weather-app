@@ -21,18 +21,21 @@ export const useDarkMode = () => {
   };
 
   const themeToggler = () => {
+    //eslint-disable-next-line
     themeMode === "light" ? setMode("dark") : setMode("light");
   };
 
   useEffect(() => {
     try {
       const localTheme = window.localStorage.getItem("themeMode");
+      //eslint-disable-next-line
       localTheme ? setTheme(localTheme) : setMode("light");
     } catch {
       setMode("light");
     }
 
     setMountedComponent(true);
+    //eslint-disable-next-line
   }, []);
 
   return [themeMode, themeToggler, mountedComponent];

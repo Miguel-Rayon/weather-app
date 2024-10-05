@@ -4,6 +4,7 @@ import { alpha, useTheme } from "@mui/material/styles";
 
 const ThemeModeToggler = () => {
   const theme = useTheme();
+  //eslint-disable-next-line
   const { themeToggler }: any = theme;
   const { mode } = theme.palette;
 

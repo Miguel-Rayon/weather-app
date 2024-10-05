@@ -4,7 +4,15 @@ import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import SidebarNav from "./components/SidebarNav";
 
-const Sidebar = ({ open, variant, onClose }: any) => {
+const Sidebar = ({
+  open,
+  variant,
+  onClose,
+}: {
+  open: boolean;
+  variant: "permanent" | "persistent" | "temporary" | undefined;
+  onClose: () => void;
+}) => {
   return (
     <Drawer
       anchor="left"

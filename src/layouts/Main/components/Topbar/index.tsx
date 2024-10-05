@@ -4,12 +4,12 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { alpha, useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Typography, Stack, List, ListItem } from "@mui/material";
+import { Typography, List, ListItem } from "@mui/material";
 import ThemeModeToggler from "@/components/ThemModeToggler";
 import { Navigation } from "@/layouts/navigation";
 import Link from "next/link";
 
-const Topbar = ({ onSidebarOpen }: any) => {
+const Topbar = ({ onSidebarOpen }: { onSidebarOpen: () => void }) => {
   const theme = useTheme();
   const { mode } = theme.palette;
 
@@ -40,7 +40,7 @@ const Topbar = ({ onSidebarOpen }: any) => {
       <Box sx={{ display: { xs: "none", md: "flex" } }} alignItems={"center"}>
         {Navigation &&
           Navigation.topbar &&
-          Navigation.topbar.map((item, index) => (
+          Navigation.topbar.map((item) => (
             <List sx={{ p: 0, marginRight: 2 }} key={item.title}>
               <ListItem alignItems="flex-start" disableGutters disablePadding>
                 <Link
