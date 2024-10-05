@@ -21,6 +21,7 @@ export const CurrentWeather = ({ weather, ...props }: ICurrentWeather) => {
             alignItems: "center",
             width: "100%",
             marginTop: isSmallScreen ? 8 : 1,
+            textAlign: "center",
           }}
         />
         <Divider
